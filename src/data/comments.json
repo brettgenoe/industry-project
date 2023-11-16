@@ -1,0 +1,27 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "comment": "Incredible movie! The plot twists kept me on the edge of my seat the entire time. A must-watch!"
+    },
+    {
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "comment": "I was pleasantly surprised by the depth of the characters and the stunning cinematography. Two thumbs up!"
+    },
+    {
+        "firstName": "Charlie",
+        "lastName": "Brown",
+        "comment": "A rollercoaster of emotions! The actors delivered outstanding performances, and the soundtrack was phenomenal."
+    },
+    {
+        "firstName": "Emily",
+        "lastName": "Jones",
+        "comment": "Not my cup of tea. The storyline felt cliché, and the dialogues were too predictable."
+    },
+    {
+        "firstName": "Daniel",
+        "lastName": "Williams",
+        "comment": "Visually stunning! The special effects were mind-blowing, making it a visual treat for any movie lover."
+    }
+]

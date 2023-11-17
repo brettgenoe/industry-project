@@ -1,13 +1,27 @@
+.main{
+ background-color: #111D4A;
+ color: #fff8f0;
+ margin:0;
+ padding:1rem;
+ border: 0;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(220, 242, 211);
-    margin: 1rem;
-    padding: 0;
+
+    &__back{
+
+        &-icon{
+
+        }
+    }
 
     &__details{
         display: flex;
-        vertical-align: middle;
+        flex-direction: column;
+        vertical-align: middle ;
+        justify-content: center;
 
         &-profilephoto{
             height: 4rem;
@@ -15,6 +29,7 @@
             border-radius: 49px;
             border: 2px solid rgba(182, 176, 255, 0.262);
             background-color: rgb(103, 183, 222);
+            width: 100%;
         }
 
         &-user{
@@ -26,97 +41,125 @@
                 margin: 0;
             }
 
-            &-status{
-                margin: 0;
-            }
+          
         }
     }
 
     &__image{
+       display: flex;
+       flex-direction: row;
+       vertical-align: middle;
 
         &-icon{
-            height: 4rem;
-            width: 4rem;
-            border-radius: 49px;
-            border: 2px solid rgba(182, 176, 255, 0.262);
-            background-color: rgb(103, 183, 222);
+            height: 37px;
+            width: 37px;
         }
     }
 }
 
-.movie{
-    margin: 1rem;
-    height:fit-content;
-    height: 10rem;
-    width: 10rem;
-    border: 2px solid rgba(182, 176, 255, 0.262);
-    background-color: rgb(103, 183, 222);
+.recent{
+    &__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-    &__poster{
-       
-       
+    &__main{
+        display: flex;
+        flex-direction: row;
+
+        &-movie{
+
+            &-poster{
+
+            }
+
+            &-details{
+
+            }
+        }
     }
 }
 
-.content{
-    margin: 1rem;
 
-    &__movie{
-        display: flex;
+
+
+
+
+
+// .movie{
+//     margin: 1rem;
+//     height:fit-content;
+//     height: 10rem;
+//     width: 10rem;
+//     border: 2px solid rgba(182, 176, 255, 0.262);
+//     background-color: rgb(103, 183, 222);
+
+//     &__poster{
+       
+       
+//     }
+// }
+
+// .content{
+//     margin: 1rem;
+
+//     &__movie{
+//         display: flex;
     
 
-        &-titles{
+//         &-titles{
 
-            &-main {
-                margin:0;
-            }
+//             &-main {
+//                 margin:0;
+//             }
 
-            &-sub {
-                margin:0;
-            }
-        }
+//             &-sub {
+//                 margin:0;
+//             }
+//         }
 
-        &-icons{
+//         &-icons{
 
-        }
-    }
+//         }
+//     }
 
-    &-add{
-        display: flex;
-        padding: 1rem 0;
+//     &-add{
+//         display: flex;
+//         padding: 1rem 0;
 
-        &-icon{
+//         &-icon{
 
-        }
+//         }
 
-        &-text{
-            margin:0;
-        }
-    }
+//         &-text{
+//             margin:0;
+//         }
+//     }
 
-    &-queue{
-        display: flex;
-        padding: 1rem 0;
+//     &-queue{
+//         display: flex;
+//         padding: 1rem 0;
 
-        &-icon{
+//         &-icon{
 
-        }
+//         }
 
-        &-text{
-            margin:0;
-        }
-    }
+//         &-text{
+//             margin:0;
+//         }
+//     }
 
-    &-share{
-        display: flex;
-        padding: 1rem 0;
+//     &-share{
+//         display: flex;
+//         padding: 1rem 0;
 
-        &-icon{
+//         &-icon{
 
-        }
+//         }
 
-        &-text{
-            margin:0;
-        }
-    }
-}
+//         &-text{
+//             margin:0;
+//         }
+//     }
+// }

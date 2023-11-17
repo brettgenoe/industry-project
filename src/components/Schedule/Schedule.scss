@@ -11,20 +11,32 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 2px solid $font-color;
     transition: border-color 0.3s ease;
+    margin-right: -1.25rem;
 }
 
 .friend-item.selected img {
-    border-color: #007bff;
+    border-color: $hover-color;
 
 }
+
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background-color: transparent;
+    color: #ffffff;
+    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(134deg) brightness(107%) contrast(98%);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+
 
 .schedule {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: (5%);
+    padding: (7.5%);
     background-color: $background-color;
 
     &__movie {
@@ -42,15 +54,44 @@
         }
     }
 
+    &__title {
+        color: $font-color;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
     &__form {
 
-
         &--label {
-            color: red;
+            color: $font-color;
+            display: block;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            font-size: 1.5rem;
+
+            &-participents {
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+        }
+
+        &--date,
+        &--time {
+            background-color: transparent;
+            color: $font-color;
+            font-size: 1.5rem;
+        }
+
+        &--date-container {
+            display: flex;
+            margin-right: 1rem;
+            width: auto;
+            overflow-y: hidden;
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
         &-friends--container {
-
             display: flex;
         }
 

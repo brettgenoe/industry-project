@@ -1,11 +1,14 @@
 import "./Schedule.scss"
 import usersData from "../../data/user.json"
 import { useState } from "react";
+import plus from "../../assets-temp/icons/icons8-plus-50.png"
+import TimePicker from "../TimePicker/TimePicker";
+import next30days from "../../data/days.json"
+import DaySelector from "../DaySelector/DaySelector";
 
 const Schedule = ({ selectedMovie }) => {
     const [formData, setFormData] = useState({
-        eventName: '',
-        date: '',
+        selectedDate: null,
         time: '',
         selectedFriends: [],
     });
@@ -29,9 +32,16 @@ const Schedule = ({ selectedMovie }) => {
         });
     };
 
+    const handleDateSelect = (e, selectedDate) => {
+        setFormData({
+            ...formData,
+            selectedDate,
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(...formData, selectedMovie);
+        console.log({ ...formData, selectedMovie });
         setFormData({
             date: '',
             time: '',
@@ -46,7 +56,7 @@ const Schedule = ({ selectedMovie }) => {
 
                 <h1 className="schedule__title"> Let's Watch Together!</h1>
                 <form
-                    // onSubmit={handleSubmit}
+                    onSubmit={handleSubmit}
                     className="scheudle__form"
                 >
                     <div className="schedule__movie-details--container">
@@ -67,28 +77,34 @@ const Schedule = ({ selectedMovie }) => {
                     <div className="schedule__form--container">  <label
                         className="schedule__form--label">
                         Pick a Date </label>
-                        <input
-                            className="schedule__form--date"
-                            type="date"
-                            name="date"
-                            value={formData.date}
-                            onChange={handleChange}
-                        />
+
+                        <div className="schedule__form--date-container">
+                            {next30days.next30Days.map((info, index) => (
+                                <DaySelector
+                                    key={index}
+                                    day={info.day}
+                                    date={info.date}
+                                    onSelect={handleDateSelect}
+
+                                />
+                            ))}</div>
 
                         <div>
                             <label className="schedule__form--label">
                                 Pick a Time  </label>
                             <input
+                                className="schedule__form--time"
                                 type="time"
                                 name="time"
                                 value={formData.time}
                                 onChange={handleChange}
                             />
+                            {/* <TimePicker /> */}
                         </div>
 
                         <br />
-                        <label className="schedule__form--label">
-                            Add Friends </label>
+                        <label className="schedule__form--label schedule__form--label-participents">
+                            Add Participents </label>
                         <ul className="schedule__form-friends--container">
                             {usersData.users.map((user) => (
                                 <div
@@ -101,8 +117,14 @@ const Schedule = ({ selectedMovie }) => {
                                         src={user.imgUrl}
                                         alt={`${user.firstName} ${user.lastName}`}
                                     />
+
+
                                 </div>
+
                             ))}
+                            <img
+                                src={plus}
+                                alt={`addition of friend`} />
                         </ul>
 
                     </div>

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import "./DaySelector.scss"
 
-const DaySelector = ({ day, date, onSelect }) => {
-    const [isSelected, setIsSelected] = useState(false)
+const DaySelector = ({ day, date, onSelect, selectedDate }) => {
+    // const [isSelected, setIsSelected] = useState(false)
+    const isSelected = selectedDate === date;
+
     const handleClick = (event) => {
         event.preventDefault();
         console.log('click event triggered')
-        setIsSelected(!isSelected)
+        // setIsSelected(!isSelected)
+        console.log('isSelected', !isSelected)
         onSelect(date);
         console.log(date)
     };
@@ -15,7 +18,8 @@ const DaySelector = ({ day, date, onSelect }) => {
     return (
 
         <div
-            className={`day-selector ${isSelected ? 'date-picked' : ''}`}
+            id={`${isSelected ? 'date-picked' : ""}`}
+            className='day-selector'
             onClick={handleClick}
         >
             <p className="day-selector__day">{day}</p>

@@ -32,7 +32,7 @@ const Schedule = ({ selectedMovie }) => {
         });
     };
 
-    const handleDateSelect = (e, selectedDate) => {
+    const handleDateSelect = (selectedDate) => {
         setFormData({
             ...formData,
             selectedDate,
@@ -77,6 +77,7 @@ const Schedule = ({ selectedMovie }) => {
                     <div className="schedule__form--container">  <label
                         className="schedule__form--label">
                         Pick a Date </label>
+                        <h3 className="schedule__form--date-title">November</h3>
 
                         <div className="schedule__form--date-container">
                             {next30days.next30Days.map((info, index) => (
@@ -85,6 +86,7 @@ const Schedule = ({ selectedMovie }) => {
                                     day={info.day}
                                     date={info.date}
                                     onSelect={handleDateSelect}
+                                    selectedDate={formData.selectedDate}
 
                                 />
                             ))}</div>
@@ -117,21 +119,20 @@ const Schedule = ({ selectedMovie }) => {
                                         src={user.imgUrl}
                                         alt={`${user.firstName} ${user.lastName}`}
                                     />
-
-
+                                    <p className="schedule__form-friends--name">{user.firstName}</p>
                                 </div>
 
                             ))}
                             <img
+                                className="schedule__form--add-button"
                                 src={plus}
                                 alt={`addition of friend`} />
                         </ul>
-
                     </div>
                     <br />
                     <button
                         className="schedule__form--button"
-                        type="submit">Invite</button>
+                        type="submit">Send Invite</button>
                 </form>
             </div>
         </section>

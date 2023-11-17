@@ -24,8 +24,11 @@
         color: $font-color;
         font-size: 1.35rem;
     }
+
+
+
 }
 
-.date-picked {
-    background-color: $hover-color;
+#date-picked {
+    background: $hover-color ;
 }

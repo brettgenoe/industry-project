@@ -4,27 +4,22 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-$primary-text: #12182C;
-$primary-element: #2E66E5;
-$primary-white: #FFFFFF;
+$black: #1E1E24;
+$red: #92140C;
+$white: #FFF8F0;
+$yellow: #FFA53A;
+$blue: #111D4A;
 
-$secondary-text: #5C667E;
-$secondary-outline: #BDC5D5;
+$grey: #bcbcbc;
 
-$background-header: #232940;
-$background-page: #F7F8F9;
-
-$support-in-stock: #158463;
-$support-out-of-stock: #C94515;
-
-$row-hover: rgba(46, 102, 229, 0.07);
+// $row-hover: rgba(46, 102, 229, 0.07);
 
 
-$text-family: Arial, sans-serif;
-$text-bold: 600;
-$text-regular: 400;
+$text-family: "Lato", Arial, sans-serif;
+// $text-bold: 600;
+// $text-regular: 400;
 
-:export {
-    primaryText: $primary-text;
-    secondaryText: $secondary-text;
-}
+// :export {
+//     primaryText: $primary-text;
+//     secondaryText: $secondary-text;
+// }

@@ -6,6 +6,8 @@ import Library from '../../assets/icons/Homescreen_Icons/Library.svg';
 import Community from '../../assets/icons/Homescreen_Icons/Community_Icon.svg';
 import More from '../../assets/icons/Homescreen_Icons/hamburgermenu.svg';
 
+import './Footer.scss';
+
 const Footer = () => {
   return (
     <nav className="nav">

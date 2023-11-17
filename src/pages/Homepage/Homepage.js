@@ -1,6 +1,7 @@
 import './Homepage.scss';
 import movieData from '../../data/movies.json';
 import userData from '../../data/userData.json';
+import { Link } from 'react-router-dom';
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -10,7 +11,6 @@ function shuffleArray(array) {
     return array;
 
   }
-
 
 const Homepage = () => {
     const shuffledMovies = shuffleArray([...movieData]);
@@ -43,11 +43,12 @@ const Homepage = () => {
                         </div>
                         <p className="home__user-stats">Vera +7</p>
                     </div>
-
+                    <Link to = "/profile">        
                     <div className="home__activeUser">
                         <img src="" alt="" />
                         <p>Sussane</p>
                     </div>
+                    </Link> 
 
                     <div className="home__rightSection">
                         <div className="home__rightSection-background">

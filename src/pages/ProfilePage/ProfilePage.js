@@ -56,6 +56,7 @@ const ProfilePage = () => {
                 <h3 className="recent__header-subtitle">View All</h3>
            </section>
 
+            <Link to = "/details">
            <section className="recent__main">
             {shuffledMovies.slice(0, 4).map((movie,index) => (
                 <div className="recent__main-movie" key={index}>
@@ -71,6 +72,7 @@ const ProfilePage = () => {
             ))}
                 
            </section>
+           </Link>
         </section>
 
         <section>

@@ -17,7 +17,9 @@ const MovieDetail = () => {
             {/* The section of header */}
 
             <section className="movie-detail__header">
+                <Link to ="/profile">
                 <img src={backArrowIcon} className="movie-detail__header-back"></img>
+                </Link>
                 <h1 className="movie-detail__header-title">Watch with Friends List</h1>
             </section>
 

@@ -4,184 +4,244 @@
 
 
 .main {
-    background-color: #111D4A;
-    color: #fff8f0;
-    margin: 0;
-    padding: 1rem;
-    border: 0;
-    font-family: "Lato";
+  background-color: #111d4a;
+  color: #fff8f0;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  font-family: "Lato";
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
 
-    // &__back{
-
-    //     &-icon{
-
-    //     }
-    // }
-
-
-
-    &__image {
-        display: flex;
-        flex-direction: row;
-        vertical-align: middle;
-
-        &-icon {
-            height: 37px;
-            width: 37px;
-        }
+  &__back {
+    &-icon {
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
     }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 27%;
+
+    &-icon {
+      height: 37px;
+      width: 37px;
+      padding-left: 0.5rem;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+    }
+  }
 }
 
 .details {
+
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: flex-start;
+
+  &-profilephoto {
+    padding: 0.5rem 0;
+    height: 77px;
+    width: 77px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-user {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+
+    &-name {
+      margin: 1.5rem 1rem;
+      @include heading-1;
+    }
+  }
+}
+
+.recent {
+  &__header {
     display: flex;
     flex-direction: row;
-    vertical-align: middle;
-    justify-content: flex-start;
+    justify-content: space-between;
+    margin:1rem 0;
 
-    &-profilephoto {
-        padding: 0.5rem 0;
-        height: 77px;
-        width: 77px
-    }
-
-    &-user {
-        display: flex;
-        flex-direction: column;
-        vertical-align: middle;
-
-        &-name {
-            margin: 1.5rem 1rem;
-            @include heading-1;
-        }
-
+    &-title {
+      @include heading-1;
 
     }
 }
 
+    &-subtitle {
+      @include heading-3;
+      color: $yellow;
+    }
+  }
 
-.recent {
-    &__header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: auto;
+    margin: 0;
+
+    &-movie {
+      padding: 0 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.5s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &-poster {
+        border-radius: 20%;
+        width: 11rem;
+        height: 14rem;
+      }
+
+      &-like {
+        width: auto;
+
+        &-icon {
+          float: right;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &-details {
+        &-genre {
+          @include heading-5;
+          color: $grey;
+          line-height: 1rem;
+          // padding:0;
+          margin: 0.5rem 0;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
 
         &-title {
-            @include heading-1;
+          @include heading-2;
+          font-weight: 400;
+          padding: 0;
+          margin: 0.5rem 0;
+          line-height: 25px;
         }
 
-        &-subtitle {
-            @include heading-3;
-            color: $yellow;
+
+        &-overview {
+          @include heading-5;
+          color: $grey;
+          font-weight: 300;
+          margin: 0.5rem 0;
+          text-align: justify;
         }
+      }
     }
-
-    &__main {
-        display: flex;
-        flex-direction: row;
-
-        &-movie {
-            padding: 0 0.5rem;
-
-            &-poster {
-                border-radius: 20%;
-                width: 14rem;
-                height: 8rem;
-            }
-
-            &-details {
-
-                &-genre {
-                    @include heading-5;
-                    color: $grey;
-                    line-height: 0;
-                    padding: 0;
-                    margin: 1rem 0;
-                }
-
-
-                &-title {
-                    @include heading-2;
-                    font-weight: 400;
-                    padding: 0;
-                    margin: 1rem 0;
-                    line-height: 25px;
-                }
-
-                &-overview {
-                    @include heading-5;
-                    color: $grey;
-                    font-weight: 300;
-                    // margin:0.5rem 0;
-                }
-            }
-
-        }
-    }
+  }
 }
 
 .friends {
-    &__header {
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:1rem 0;
+
+    &-title {
+      @include heading-1;
+    }
+
+    &-subtitle {
+      @include heading-3;
+      color: $yellow;
+
+    }
+  }
+
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    margin: 0;
+
+    &-movie {
+      padding: 0 0.5rem;
+    //   opacity: 0.6;
+    //   transition: opacity 0.5s ease-in-out;
+    //   &:hover {
+    //     opacity: 1;
+    //   }
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &-poster {
+        border-radius: 20%;
+        width: 9.375rem;
+        height: 12.5rem;
+      }
+
+      &-details {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+
+        &-genre {
+          @include heading-5;
+          color: $grey;
+          line-height: 1rem;
+          padding: 0;
+          margin: 0.5rem 0;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
 
         &-title {
-            @include heading-1;
+          @include heading-2;
+          font-weight: 400;
+          padding: 0;
+          margin: 0.5rem 0;
+          line-height: 25px;
         }
 
-        &-subtitle {
-            @include heading-3;
-            color: $yellow;
+
+        &-options {
+          margin: 0;
+          font-size: 20px;
         }
+      }
     }
-
-    &__main {
-        display: flex;
-        flex-direction: row;
-
-        &-movie {
-            padding: 0 0.5rem;
-
-            &-poster {
-                border-radius: 20%;
-                width: 9.375rem;
-                height: 12.5rem;
-            }
-
-            &-details {
-                display: flex;
-
-                &-genre {
-                    @include heading-5;
-                    color: $grey;
-                    line-height: 0;
-                    padding: 0;
-                    margin: 1rem 0;
-                }
-
-
-                &-title {
-                    @include heading-2;
-                    font-weight: 400;
-                    padding: 0;
-                    margin: 1rem 0;
-                    line-height: 25px;
-                }
-
-                &-options {
-                    margin: 0;
-                    font-size: 20px;
-                }
-
-            }
-        }
-    }
+  }
 }
+
 
 
 
@@ -265,3 +325,4 @@
 //         }
 //     }
 // }
+

@@ -13,7 +13,7 @@
     height: 3.5rem;
     border-radius: 50%;
     border: 3px solid $white;
-    border: 2px solid $white;
+
     transition: border-color 0.3s ease;
     margin-right: 0rem;
 }
@@ -23,6 +23,11 @@
 
 }
 
+.backarrow {
+    position: absolute;
+    top: .5rem;
+    lefT: .5rem;
+}
 
 input[type="time"]::-webkit-calendar-picker-indicator {
     background-color: transparent;
@@ -41,7 +46,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     height: 100vh;
     padding: (7.5%);
     background-color: $blue;
-    background-color: $black;
+
 
     &__movie {
         &-details {
@@ -61,16 +66,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
             width: 100%;
             height: 20vh;
             border-radius: 2rem;
-
         }
 
     }
 
-    &__title {
-        color: $white;
-        font-size: 2rem;
-        font-weight: 500;
-    }
+
 
     &__form {
         &--title {
@@ -89,6 +89,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         }
 
         &--label {
+
+            @include heading-4;
+
             color: $white;
             display: block;
             padding-top: 1rem;
@@ -104,13 +107,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
         &--time {
             background-color: transparent;
-            color: $yellow;
+
+            @include heading-4;
+            color: $white;
+
             font-size: 1.5rem;
         }
 
         &--date-title {
-            color: $yellow;
-            font-size: 1.5rem;
+
+            background-color: transparent;
+            @include heading-4;
+            color: $white;
+            font-size: 1.3rem;
+
             margin-bottom: .5rem;
             margin-top: .5rem;
         }
@@ -132,7 +142,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
             &--name {
                 color: $white;
-                color: $white;
+
+
             }
         }
 
@@ -144,7 +155,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
         &--button {
             background-color: $yellow;
-            color: $black;
+
+            color: $blue;
+
             width: 90%;
             height: 4rem;
             font-size: 1.5rem;

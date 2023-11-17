@@ -2,7 +2,7 @@ import './Homepage.scss';
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import movieData from '../../data/movies.json';
-import userData from '../../data/user.json';
+import userData from '../../data/userData.json';
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -33,6 +33,7 @@ const Homepage = () => {
     </nav>
 
 
+
     <div className="home__friends">
     <h3 className="home__activityTitle">Friends & Activity</h3>
     <div className="home__activity">
@@ -46,9 +47,39 @@ const Homepage = () => {
                 alt={`${user.firstName} ${user.lastName}`}
                 />
             ))}
+
             </div>
-            <p className="home__user-stats">Vera +7</p>
+
+            <div className="home__mainSection">
+                <h2 className="home__mainTitle">Most Popular Now</h2>
+                <div className="home__movieSection">
+                    {movieData.slice(0, 9).map((movie) => (
+                        <div key={movie.id} className="home__movie-card">
+                            <p className="home__genre">{movie.Genre}</p>
+                            <img className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
+                            <div className="home__buttons">
+                                <button className="home__button-save">Save</button>
+                                <button className="home__button-watchNow">Watch Now</button>
+                                <button className="home__button-share">Share</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
+
+            <div className="home__recentlyWatched">
+                <div className="home__popularMovies">
+                    <h2 className="home__sectionTitle">Recently Watched</h2>
+                    <button className="home__button-seeAll">See All</button>
+                </div>
+
+                <div className="home__popularMovies">
+                    {shuffledMovies.slice(0, 4).map((movie) => (
+                        <img key={movie.id} className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
+                    ))}
+                </div>
+            </div>
+
 
         <div className="home__activeUser">
             <img src="" alt="" />
@@ -100,6 +131,7 @@ const Homepage = () => {
                     ))}
                 </div>
             </div>
+
 
 
 </section>

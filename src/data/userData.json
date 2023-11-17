@@ -34,8 +34,20 @@
         "firstName": "Daniel",
         "lastName": "Williams",
         "favoriteMovieId": 5
+      },
+      {
+        "id": 6,
+        "imgUrl": "https://randomuser.me/api/portraits/women/6.jpg",
+        "firstName": "Grace",
+        "lastName": "Johnson",
+        "favoriteMovieId": 6
+      },
+      {
+        "id": 7,
+        "imgUrl": "https://randomuser.me/api/portraits/men/7.jpg",
+        "firstName": "Oliver",
+        "lastName": "Davis",
+        "favoriteMovieId": 7
       }
     ]
   }
-  
-  

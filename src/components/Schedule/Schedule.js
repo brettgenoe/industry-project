@@ -1,10 +1,11 @@
 import "./Schedule.scss"
-import usersData from "../../data/user.json"
+import usersData from "../../data/userData.json"
 import { useState } from "react";
 import plus from "../../assets-temp/icons/icons8-plus-50.png"
 import TimePicker from "../TimePicker/TimePicker";
 import next30days from "../../data/days.json"
 import DaySelector from "../DaySelector/DaySelector";
+import Confirmation from "../Confirmation/Confirmation";
 
 const Schedule = ({ selectedMovie }) => {
     const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Schedule = ({ selectedMovie }) => {
         time: '',
         selectedFriends: [],
     });
+
+    const [showConfirmation, setShowConfirmation] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -42,11 +45,12 @@ const Schedule = ({ selectedMovie }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({ ...formData, selectedMovie });
-        setFormData({
-            date: '',
-            time: '',
-            selectedFriends: [],
-        });
+        // setFormData({
+        //     date: '',
+        //     time: '',
+        //     selectedFriends: [],
+        // });
+        setShowConfirmation(true);
     };
 
     return (
@@ -134,6 +138,13 @@ const Schedule = ({ selectedMovie }) => {
                         className="schedule__form--button"
                         type="submit">Send Invite</button>
                 </form>
+                {showConfirmation && (<Confirmation
+                    formData={formData}
+                    selectedMovie={selectedMovie}
+                    usersData={usersData}
+                    showConfirmation={showConfirmation}
+                    onClose={() => setShowConfirmation(false)}
+                />)}
             </div>
         </section>
     );

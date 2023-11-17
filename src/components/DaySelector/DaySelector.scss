@@ -16,12 +16,12 @@
 
 
     &__day {
-        color: $font-color;
+        color: $white;
         font-size: 1.35rem;
     }
 
     &__date {
-        color: $font-color;
+        color: $white;
         font-size: 1.35rem;
     }
 
@@ -30,5 +30,5 @@
 }
 
 #date-picked {
-    background: $hover-color ;
+    background: $red ;
 }

@@ -2,254 +2,232 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/fonts";
 
-
-.main{
- background-color: #111D4A;
- color: #fff8f0;
- margin:0;
- padding:1rem;
- border: 0;
- font-family: "Lato";
+.main {
+  background-color: #111d4a;
+  color: #fff8f0;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  font-family: "Lato";
 }
 
-.header{
+.header {
+  display: flex;
+  justify-content: space-between;
+  // width:100%;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__back {
+    &-icon {
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__image {
     display: flex;
-    justify-content: space-between;
-    // width:100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 27%;
+
+    &-icon {
+      height: 37px;
+      width: 37px;
+      padding-left: 0.5rem;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: flex-start;
+
+  &-profilephoto {
+    padding: 0.5rem 0;
+    height: 77px;
+    width: 77px;
     transition: transform 0.3s ease-in-out;
     &:hover {
-        transform: translateY(-5px);
+      transform: scale(1.1);
     }
+  }
 
-    &__back{
+  &-user {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
 
-        &-icon{
-            transition: transform 0.3s ease-in-out;
-            &:hover {
-              transform: scale(1.2);
-              cursor: pointer;
-            }
-        }
-    }  
-
-    &__image{
-       display: flex;
-       flex-direction: row;
-       justify-content: space-evenly;
-       width: 27%;
-
-        &-icon{
-            height: 37px;
-            width: 37px;
-            padding-left: 0.5rem;
-            transition: transform 0.3s ease-in-out;
-            &:hover {
-              transform: scale(1.2);
-              cursor: pointer;
-            }
-        }
+    &-name {
+      margin: 1.5rem 1rem;
+      @include heading-1;
     }
+  }
 }
 
-.details{
-        display: flex;
-        flex-direction: row;
-        vertical-align: middle ;
-        justify-content: flex-start;
+.recent {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:1rem 0;
 
-        &-profilephoto{
-            padding:0.5rem 0;
-            height: 77px;
-            width: 77px;
-            transition: transform 0.3s ease-in-out;
-                &:hover {
-                transform: scale(1.1);
-                }
-            
-        }
-
-        &-user{
-            display: flex;
-            flex-direction: column;
-            vertical-align:middle;
-
-            &-name {
-                margin: 1.5rem 1rem;
-                @include heading-1;
-            }
-        }
+    &-title {
+      @include heading-1;
     }
 
-
-.recent{
-    &__header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-       
-        &-title{
-            @include heading-1;
-        }
-
-        &-subtitle{
-            @include heading-3;
-            color: $yellow;
-        }
+    &-subtitle {
+      @include heading-3;
+      color: $yellow;
     }
+  }
 
-    &__main{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        overflow-y: auto;
-        margin: 0;
-        
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: auto;
+    margin: 0;
 
-        &-movie{
-            padding:0 0.5rem;
-            opacity: 0.7;
-            transition: opacity 0.5s ease-in-out;
-            &:hover {
-                opacity: 1;
-              }
-            transition: transform 0.5s ease-in-out;
-            &:hover {
-              transform: scale(1.05);
-            }
+    &-movie {
+      padding: 0 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.5s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
 
-            
-            &-poster{
-                border-radius: 20%;
-                width: 12rem;
-                height: 8rem;
-            }
+      &-poster {
+        border-radius: 20%;
+        width: 12rem;
+        height: 8rem;
+      }
 
-            &-like{
-                width:auto;
-               
-                &-icon{
-                    float: right;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                }
-            }
-            
+      &-like {
+        width: auto;
 
-            
-
-            &-details{
-              
-                &-genre{
-                    @include heading-5;
-                    color: $grey;
-                    line-height: 1rem;
-                    // padding:0;
-                    margin:0.5rem 0;
-                    text-transform: uppercase;
-                    font-size: 10px;
-                }
-                
-
-                &-title{
-                    @include heading-2;
-                    font-weight:400;
-                    padding:0;
-                    margin:0.5rem 0;
-                    line-height: 25px;
-                }
-
-                &-overview{
-                    @include heading-5;
-                    color: $grey;
-                    font-weight: 300;
-                    margin:0.5rem 0;
-                    text-align: justify;
-                    
-                }
-            }
-
+        &-icon {
+          float: right;
+          &:hover {
+            cursor: pointer;
+          }
         }
+      }
+
+      &-details {
+        &-genre {
+          @include heading-5;
+          color: $grey;
+          line-height: 1rem;
+          // padding:0;
+          margin: 0.5rem 0;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
+
+        &-title {
+          @include heading-2;
+          font-weight: 400;
+          padding: 0;
+          margin: 0.5rem 0;
+          line-height: 25px;
+        }
+
+        &-overview {
+          @include heading-5;
+          color: $grey;
+          font-weight: 300;
+          margin: 0.5rem 0;
+          text-align: justify;
+        }
+      }
     }
+  }
 }
 
-.friends{
-    &__header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+.friends {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:1rem 0;
 
-        &-title{
-            @include heading-1;
-        }
-
-        &-subtitle{
-            @include heading-3;
-            color: $yellow;
-        }
+    &-title {
+      @include heading-1;
     }
 
-    &__main{
-        display: flex;
-        flex-direction: row;
-        overflow-y: auto;
-        margin: 0;
-
-        &-movie{
-            padding: 0 0.5rem;
-            opacity: 0.6;
-            transition: opacity 0.5s ease-in-out;
-            &:hover {
-                opacity: 1;
-            }
-            transition: transform 0.5s ease-in-out;
-            &:hover {
-              transform: scale(1.05);
-            }
-
-            &-poster{
-                border-radius: 20%;
-                width: 9.375rem;
-                height:12.5rem;
-            }
-
-            &-details{
-                display: flex;
-
-                &-genre{
-                    @include heading-5;
-                    color: $grey;
-                    line-height: 1rem;
-                    padding:0;
-                    margin:0.5rem 0;
-                    text-transform: uppercase;
-                    font-size: 10px;
-                }
-                
-
-                &-title{
-                    @include heading-2;
-                    font-weight:400;
-                    padding:0;
-                    margin:0.5rem 0;
-                    line-height: 25px;
-                }
-
-                &-options{
-                    margin: 0;
-                    font-size: 20px;
-                }
-
-            }
-        }
+    &-subtitle {
+      @include heading-3;
+      color: $yellow;
     }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    margin: 0;
+
+    &-movie {
+      padding: 0 0.5rem;
+      opacity: 0.6;
+      transition: opacity 0.5s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &-poster {
+        border-radius: 20%;
+        width: 9.375rem;
+        height: 12.5rem;
+      }
+
+      &-details {
+        display: flex;
+
+        &-genre {
+          @include heading-5;
+          color: $grey;
+          line-height: 1rem;
+          padding: 0;
+          margin: 0.5rem 0;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
+
+        &-title {
+          @include heading-2;
+          font-weight: 400;
+          padding: 0;
+          margin: 0.5rem 0;
+          line-height: 25px;
+        }
+
+        &-options {
+          margin: 0;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
-
-
-
-
-
-
-
-
- 

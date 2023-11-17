@@ -1,0 +1,53 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
+        "firstName": "John",
+        "lastName": "Doe",
+        "favoriteMovieId": 1
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://randomuser.me/api/portraits/women/2.jpg",
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "favoriteMovieId": 2
+      },
+      {
+        "id": 3,
+        "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg",
+        "firstName": "Charlie",
+        "lastName": "Brown",
+        "favoriteMovieId": 3
+      },
+      {
+        "id": 4,
+        "imgUrl": "https://randomuser.me/api/portraits/women/4.jpg",
+        "firstName": "Emily",
+        "lastName": "Jones",
+        "favoriteMovieId": 4
+      },
+      {
+        "id": 5,
+        "imgUrl": "https://randomuser.me/api/portraits/men/5.jpg",
+        "firstName": "Daniel",
+        "lastName": "Williams",
+        "favoriteMovieId": 5
+      },
+      {
+        "id": 6,
+        "imgUrl": "https://randomuser.me/api/portraits/women/6.jpg",
+        "firstName": "Grace",
+        "lastName": "Johnson",
+        "favoriteMovieId": 6
+      },
+      {
+        "id": 7,
+        "imgUrl": "https://randomuser.me/api/portraits/men/7.jpg",
+        "firstName": "Oliver",
+        "lastName": "Davis",
+        "favoriteMovieId": 7
+      }
+    ]
+  }

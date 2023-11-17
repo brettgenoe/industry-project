@@ -21,9 +21,7 @@ const Homepage = () => {
     <nav className="home__nav">
         <button className="home__button-profile"></button>
         <button className="home__button-settings"></button>
-        <h1 className="home__title">Discover</h1>
-        <button className="home__button-alert"></button>
-        <button className="home__button-rewind"></button>
+        <img src={selectedUsers[0].img} alt="img of {selectedUsers.firstName}" />
     </nav>
 
     <div className="home__friends">
@@ -67,7 +65,7 @@ const Homepage = () => {
      <div className="home__mainSection">   
     <h2 className="home__mainTitle">Most Popular Now</h2>
     <div className="home__movieSection">
-  {movieData.slice(0, 12).map((movie) => (
+  {movieData.slice(0, 9).map((movie) => (
     <div key={movie.id} className="home__movie-card">
       <p className="home__genre">{movie.Genre}</p>
       <img className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
@@ -88,7 +86,7 @@ const Homepage = () => {
         </div>
 
         <div className="home__popularMovies">
-        {shuffledMovies.slice(0, 6).map((movie) => (
+        {shuffledMovies.slice(0, 4).map((movie) => (
           <img key={movie.id} className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
         ))}
         </div>

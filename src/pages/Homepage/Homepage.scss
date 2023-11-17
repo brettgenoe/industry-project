@@ -124,9 +124,10 @@
     &__mainTitle {
         margin: 1rem 0 0 0;
         color: $white;
+    
     }
 
-   &__movieSection {
+    &__movieSection {
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -134,23 +135,24 @@
         height: 357px; 
         overflow-y: auto;
         margin: 0;
-   }
-   &__movie-card {
+    }
+
+    &__movie-card {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 330px;
     }
 
-   &__moviePosters {
+    &__moviePosters {
         position: relative;
         height: 300px;
         width: 200px;
         margin: .25rem;
         border-radius: 10px;
-   }
+    }
 
-   &__genre {
+    &__genre {
         position: relative;
         top: 235px;
         z-index: 1;
@@ -185,6 +187,7 @@
         width: 30px;
         background-color: transparent;
         color: $white;
+        color: $white;
         border: none;
    }
 
@@ -211,38 +214,39 @@
     }
    }
 
-   &__button-watchNow {
+    &__button-watchNow {
         background-color: transparent;
         color: $white;
         &:hover {
             cursor: pointer;
         }
-   }
+    }
 
-   &__recentlyWatched {
+    &__recentlyWatched {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 95vw;
-        height: 360px; 
+        height: 360px;
         overflow-y: auto;
         margin: 0;
     }
 
-   &__popularMovies {
+    &__popularMovies {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-   }
+    }
 
-   &__sectionTitle {
+    &__sectionTitle {
         font-size: 1rem;
         color: $white;
    }
 
-   &__button-seeAll {
+    &__button-seeAll {
         background-color: transparent;
         border: none;
+        color: $yellow;
         color: $yellow;
         font-size: .75rem;
         &:hover {

@@ -13,6 +13,7 @@
     border-radius: .5rem;
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
 
 
     &__day {
@@ -30,5 +31,5 @@
 }
 
 #date-picked {
-    background: $hover-color ;
+    background: $red ;
 }

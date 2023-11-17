@@ -1,6 +1,7 @@
 @use "../../styles/partials/variables.scss" as *;
-
-
+@use "../../styles/partials/resets.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
 .friend-item {
     margin-right: 10px;
@@ -8,22 +9,24 @@
 }
 
 .friend-item img {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
+    border: 3px solid $white;
     border: 2px solid $white;
     transition: border-color 0.3s ease;
     margin-right: 0rem;
 }
 
 .friend-item.selected img {
-    border-color: $hover-color;
+    border-color: $red;
 
 }
 
 
 input[type="time"]::-webkit-calendar-picker-indicator {
     background-color: transparent;
+    border: none;
     color: #ffffff;
     filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(134deg) brightness(107%) contrast(98%);
     cursor: pointer;
@@ -37,6 +40,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     flex-direction: column;
     height: 100vh;
     padding: (7.5%);
+    background-color: $blue;
     background-color: $black;
 
     &__movie {
@@ -52,6 +56,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         &-poster {
             width: 80%;
         }
+
+        &-image {
+            width: 100%;
+            height: 20vh;
+            border-radius: 2rem;
+
+        }
+
     }
 
     &__title {
@@ -61,12 +73,26 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     }
 
     &__form {
+        &--title {
+            @include heading-1;
+            color: $red;
+            font-size: 1.75rem;
+            // font-weight: 500;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        &--description {
+            @include heading-5;
+            font-weight: 300;
+            line-height: 1.5;
+        }
 
         &--label {
             color: $white;
             display: block;
-            padding-top: .5rem;
-            padding-bottom: .5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: 600;
 
@@ -86,6 +112,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
             color: $yellow;
             font-size: 1.5rem;
             margin-bottom: .5rem;
+            margin-top: .5rem;
         }
 
         &--date-container {
@@ -93,7 +120,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
             margin-right: 1rem;
             width: auto;
             overflow-y: hidden;
-            overflow-x: auto;
+            overflow-x: scroll;
+            padding-bottom: .5rem;
             white-space: nowrap;
         }
 
@@ -103,6 +131,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
             }
 
             &--name {
+                color: $white;
                 color: $white;
             }
         }

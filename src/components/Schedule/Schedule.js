@@ -5,13 +5,20 @@ import plus from "../../assets-temp/icons/icons8-plus-50.png"
 import TimePicker from "../TimePicker/TimePicker";
 import next30days from "../../data/days.json"
 import DaySelector from "../DaySelector/DaySelector";
+import Confirmation from "../Confirmation/Confirmation";
+import movieData from "../../data/movies.json";
+
 
 const Schedule = ({ selectedMovie }) => {
     const [formData, setFormData] = useState({
         selectedDate: null,
         time: '',
+        selectedDay: null,
+
         selectedFriends: [],
     });
+
+    const [showConfirmation, setShowConfirmation] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -32,21 +39,23 @@ const Schedule = ({ selectedMovie }) => {
         });
     };
 
-    const handleDateSelect = (selectedDate) => {
+    const handleDateSelect = (selectedDate, selectedDay) => {
         setFormData({
             ...formData,
             selectedDate,
+            selectedDay,
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({ ...formData, selectedMovie });
-        setFormData({
-            date: '',
-            time: '',
-            selectedFriends: [],
-        });
+        // setFormData({
+        //     date: '',
+        //     time: '',
+        //     selectedFriends: [],
+        // });
+        setShowConfirmation(true);
     };
 
     return (
@@ -54,13 +63,15 @@ const Schedule = ({ selectedMovie }) => {
         <section className="schedule">
             <div className="schedule__container">
 
-                <h1 className="schedule__title"> Let's Watch Together!</h1>
+
                 <form
                     onSubmit={handleSubmit}
                     className="scheudle__form"
                 >
-                    <div className="schedule__movie-details--container">
-                        {selectedMovie && (
+                    <div
+                    // className="schedule__movie-details--container"
+                    >
+                        {/* {selectedMovie && (
                             <>
                                 <img
                                     src={selectedMovie.imgUrl}
@@ -72,7 +83,15 @@ const Schedule = ({ selectedMovie }) => {
 
 
                             </>
-                        )}
+                        )} */}
+                        <div className="schedule__movie-image--container">
+                            <img
+                                className="schedule__movie-image"
+                                src={movieData[1].Poster} />
+
+                        </div>
+                        <h1 className="schedule__form--title"> Join the {movieData[1].Title} Gathering </h1>
+                        <p className="schedule__form--description">{movieData[1].Plot}</p>
                     </div>
                     <div className="schedule__form--container">  <label
                         className="schedule__form--label">
@@ -85,10 +104,10 @@ const Schedule = ({ selectedMovie }) => {
                                     key={index}
                                     day={info.day}
                                     date={info.date}
-                                    onSelect={handleDateSelect}
+                                    onSelect={(selectedDate, selectedDay) => handleDateSelect(selectedDate, selectedDay)}
                                     selectedDate={formData.selectedDate}
-
                                 />
+
                             ))}</div>
 
                         <div>
@@ -134,6 +153,15 @@ const Schedule = ({ selectedMovie }) => {
                         className="schedule__form--button"
                         type="submit">Send Invite</button>
                 </form>
+                {showConfirmation && (<Confirmation
+                    formData={formData}
+                    selectedMovie={selectedMovie}
+                    usersData={usersData}
+                    showConfirmation={showConfirmation}
+                    onClose={() => setShowConfirmation(false)}
+                    selectedDate={formData.selectedDate}
+                    selectedDay={formData.selectedDay}
+                />)}
             </div>
         </section>
     );

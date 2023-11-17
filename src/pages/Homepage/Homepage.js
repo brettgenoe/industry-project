@@ -21,9 +21,9 @@ const Homepage = () => {
         <section className="home">
 
     <nav className="home__nav">
-        <button className="home__button-profile"></button>
-        <button className="home__button-settings"></button>
-        <img src={selectedUsers[0].img} alt="img of {selectedUsers.firstName}" />
+        {/* <button className="home__button-profile"></button>
+        <button className="home__button-settings"></button> */}
+        {/* <img src={selectedUsers[0].img} alt="img of {selectedUsers.firstName}" /> */}
     </nav>
 
 

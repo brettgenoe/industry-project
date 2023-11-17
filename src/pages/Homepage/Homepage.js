@@ -8,7 +8,9 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
+
+  }
+
 
 const Homepage = () => {
     const shuffledMovies = shuffleArray([...movieData]);
@@ -18,11 +20,12 @@ const Homepage = () => {
     return (
         <section className="home">
 
-            <nav className="home__nav">
-                <button className="home__button-profile"></button>
-                <button className="home__button-settings"></button>
-                <img src={selectedUsers[0].img} alt="img of {selectedUsers.firstName}" />
-            </nav>
+    <nav className="home__nav">
+        <button className="home__button-profile"></button>
+        <button className="home__button-settings"></button>
+        <img src={selectedUsers[0].img} alt="img of {selectedUsers.firstName}" />
+    </nav>
+
 
             <div className="home__friends">
                 <h3 className="home__activityTitle">Friends & Activity</h3>
@@ -92,7 +95,8 @@ const Homepage = () => {
                 </div>
             </div>
 
-        </section>
+
+</section>
 
     )
 }

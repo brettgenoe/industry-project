@@ -1,4 +1,8 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/resets.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
 
 
 .confirmation {
@@ -22,6 +26,7 @@
 
 
     &__title {
+        @include heading-1;
         color: $white;
         font-size: 1.75rem;
         line-height: 1.5;
@@ -33,6 +38,8 @@
     }
 
     &__paragraph {
+        @include heading-4;
+        font-weight: 300;
         color: $white;
         text-align: center;
         font-size: 1.25rem;
@@ -41,6 +48,7 @@
         width: 75vw;
 
         &--friends {
+            @include heading-4;
             font-weight: 800;
             display: inline;
             display: flex;
@@ -51,6 +59,39 @@
             }
         }
     }
+
+    &__time {
+        &-container {
+            @include heading-3;
+            font-weight: 400;
+            display: flex;
+            font-size: 1.75rem;
+            width: 80vw;
+            justify-content: center;
+            margin-top: 2rem;
+            color: $white;
+        }
+
+        &-time {
+            width: 50%;
+            text-align: center;
+        }
+
+        &-movie {
+            width: 50%;
+            border-left: 3px solid $yellow;
+            text-align: center;
+        }
+    }
+
+    &__date {
+        @include heading-4;
+        color: $grey;
+        padding-top: 1.5rem;
+        font-size: 1.5rem;
+
+    }
+
 
     &__button {
         background-color: $yellow;

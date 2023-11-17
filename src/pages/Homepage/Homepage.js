@@ -1,6 +1,6 @@
 import './Homepage.scss';
 import movieData from '../../data/movies.json';
-import userData from '../../data/user.json';
+import userData from '../../data/userData.json';
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {

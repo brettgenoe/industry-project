@@ -7,6 +7,9 @@ import next30days from "../../data/days.json"
 import DaySelector from "../DaySelector/DaySelector";
 import Confirmation from "../Confirmation/Confirmation";
 import movieData from "../../data/movies.json";
+import movieThumbnail from "../../assets/Midnight-Family.jpg"
+import backarrow from "../../assets/icons/FriendsWatchlist_Icons/Backbutton.svg"
+import { Link } from "react-router-dom";
 
 
 const Schedule = ({ selectedMovie }) => {
@@ -62,7 +65,9 @@ const Schedule = ({ selectedMovie }) => {
 
         <section className="schedule">
             <div className="schedule__container">
-
+                <Link to="/details"><img className="backarrow"
+                    src={backarrow}
+                    alt="back arrow" /> </Link>
 
                 <form
                     onSubmit={handleSubmit}
@@ -87,7 +92,7 @@ const Schedule = ({ selectedMovie }) => {
                         <div className="schedule__movie-image--container">
                             <img
                                 className="schedule__movie-image"
-                                src={movieData[1].Poster} />
+                                src={movieThumbnail} />
 
                         </div>
                         <h1 className="schedule__form--title"> Join the {movieData[1].Title} Gathering </h1>
@@ -125,7 +130,7 @@ const Schedule = ({ selectedMovie }) => {
 
                         <br />
                         <label className="schedule__form--label schedule__form--label-participents">
-                            Add Participents </label>
+                            Add Friends! </label>
                         <ul className="schedule__form-friends--container">
                             {usersData.users.map((user) => (
                                 <div

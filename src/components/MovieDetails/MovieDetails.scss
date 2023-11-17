@@ -1,3 +1,10 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/resets.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -7,10 +14,13 @@
 .movie-detail {
     background-color: #111D4A;
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    padding-top: 1.5rem;
 
     &__header {
         display: flex;
         align-items: center;
+        padding-bottom: 1.5rem;
 
         &-back {
             width: 37px;
@@ -19,10 +29,12 @@
         }
 
         &-title {
-            font-size: 1rem;
-            color: white;
-            margin-left: 10px;
+            @include heading-1;
+            // font-size: 1rem;
+            // color: white;
+            margin-left: 2rem;
             font-weight: normal;
+
         }
 
     }
@@ -30,12 +42,12 @@
     &__hero {
         max-width: 100%;
         width: 100%;
-        height: 200px;
-        overflow: hidden;
+        // height: 20vw;
+        // overflow: hidden;
 
         &-poster {
             width: 100%;
-            height: 393px;
+            height: 24rem;
             object-fit: cover;
             object-position: 100% 120%; // Adjusts the position of the image
 
@@ -47,26 +59,36 @@
         flex-direction: column;
         margin-left: 29px;
         margin-right: 29px;
-        margin-top: 14px;
+        margin-top: 1rem;
         padding-bottom: 10px;
         border-bottom: 1px solid #858586;
 
         &-title {
-            color: white;
+            @include heading-2;
+            font-size: 1.75rem;
             display: flex;
             justify-content: space-between;
             font-weight: normal;
+            padding-bottom: 1rem;
         }
 
         &-icon {
-            width: 24px;
+            height: 1.75rem;
+
+            &-positioning {
+                display: flex;
+                width: 15%;
+                justify-content: space-between;
+            }
         }
 
         &-sub {
             margin-top: 5px;
 
             display: flex;
+
             justify-content: flex-start;
+            padding-bottom: .75rem;
 
 
             &-pair {
@@ -74,22 +96,27 @@
                 justify-content: center;
                 align-items: center;
 
+                &-icon {
+                    height: 1rem;
+                }
+
                 &-text {
                     color: #BCBCBC;
                     margin-left: 10px;
                     margin-right: 10px;
-                    font-size: 0.75rem;
+                    font-size: 1rem;
                 }
             }
         }
     }
 
     &__synopsis {
+        @include heading-2;
         margin-left: 29px;
         margin-right: 29px;
-        color: #FFFFFF;
+        color: $white;
         margin-top: 14px;
-        font-size: 1rem;
+        font-size: 1.25rem;
         padding-bottom: 14px;
         border-bottom: 1px solid #858586;
 
@@ -99,7 +126,7 @@
 
         &-text {
 
-            margin-top: 10px;
+            margin-top: .5rem;
             font-size: 0.875rem;
             color: #BCBCBC;
         }
@@ -140,22 +167,32 @@
             margin-top: 10px;
 
             &-schedule {
-                width: 90px;
-                height: 30px;
+                width: 25vw;
+                height: 2.5rem;
                 border-radius: 10px;
-                border: 0px black solid;
+                border: 1px $yellow solid;
                 background-color: #FFA53A;
 
+                &:hover {
+                    background-color: $red;
+                    color: $white;
+                }
             }
 
             &-discuss {
-                width: 90px;
-                height: 30px;
+                width: 25vw;
+                height: 2.5rem;
                 margin-left: 20px;
                 border-radius: 10px;
                 border: 1px #FFA53A solid;
                 background-color: rgba(0, 0, 0, 0);
-                color: #FFFFFF
+                color: #FFFFFF;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $red;
+                    color: $blue;
+                }
             }
         }
     }

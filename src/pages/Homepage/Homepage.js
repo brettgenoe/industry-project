@@ -70,7 +70,7 @@ const Homepage = () => {
   {movieData.slice(0, 12).map((movie) => (
     <div key={movie.id} className="home__movie-card">
       <p className="home__genre">{movie.Genre}</p>
-      <img className="home__moviePosters" src={movie.Poster_Link} alt={`Poster for ${movie.Series_Title}`} />
+      <img className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
       <div className="home__buttons">
       <button className="home__button-save">Save</button>
       <button className="home__button-watchNow">Watch Now</button>
@@ -89,7 +89,7 @@ const Homepage = () => {
 
         <div className="home__popularMovies">
         {shuffledMovies.slice(0, 6).map((movie) => (
-          <img key={movie.id} className="home__moviePosters" src={movie.Poster_Link} alt={`Poster for ${movie.Series_Title}`} />
+          <img key={movie.id} className="home__moviePosters" src={movie.Poster} alt={`Poster for ${movie.Series_Title}`} />
         ))}
         </div>
     </div>

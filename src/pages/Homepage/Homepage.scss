@@ -52,16 +52,25 @@
     }
 
     &__leftSection-background {
-        background: linear-gradient(to right, #ba6d0e, #d8a08b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, rgb(139, 33, 17), #d8a08b);
+        box-shadow: 0 0 5px 1px rgba(244, 225, 192, 0.7);
         border-radius: 25px;
         width: 100px;
+        height: 40px;
         margin: 0;
     }
 
     &__rightSection-background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: rgb(100, 97, 97);
         border-radius: 25px;
         width: 100px;
+        height: 40px;
         margin: 0 auto;
     }
 
@@ -73,6 +82,7 @@
         height: 30px;
         border-radius: 50%;
         border: 1px solid $font-color;
+        margin: 0 0 0 -8px;
     }
 
     &__user-stats {
@@ -89,20 +99,23 @@
    &__movieSection {
         display: flex;
         flex-direction: row;
+        align-content: center;
         width: 95vw;
-        height: 385x; 
+        height: 340px; 
         overflow-y: auto;
         margin: 0;
    }
    &__movie-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 330px;
     }
 
    &__moviePosters {
         position: relative;
         height: 300px;
+        width: 200px;
         margin: .25rem;
         border-radius: 10px;
    }
@@ -111,10 +124,12 @@
         position: relative;
         top: 255px;
         z-index: 1;
+        font-size: .5rem;
         color: $font-color;
    }
 
    &__buttons {
+        backdrop-filter: blur(2px);
         position: relative;
         top: -60px;
         display: flex;
@@ -131,7 +146,7 @@
    &__button-watchNow {
         background-color: transparent;
         color: $font-color;
-        border: 1px solid white;
+        border: 3px solid white;
         border-radius: 5px;
         padding: .5rem 1rem;
         &:hover {

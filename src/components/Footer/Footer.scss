@@ -19,7 +19,8 @@
     }
 
     &__icon {
-        fill: #FFFFFF;
+        stroke: #FFFFFF;
+        height: 35px;
         &:hover {
             fill: orange;
             cursor: pointer;
@@ -28,4 +29,5 @@
     &__title {
         font-size: .8rem;
     }
+
 }

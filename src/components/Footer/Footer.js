@@ -13,28 +13,28 @@ const Footer = () => {
     <nav className="nav">
     <div className="nav__div">
       <Link to="/home">
-        <img className="nav__icon" src={Home} alt="home icon" />
+        <img className="nav__icon nav__home" src={Home} alt="home icon" />
         <p className="nav__title">Home</p>
       </Link>
       </div>
 
         <div className="nav__div">
-        <img className="nav__icon" src={Search} alt="search icon" />
+        <img className="nav__icon nav__search" src={Search} alt="search icon" />
         <p className="nav__title">Search</p>
       </div>
 
       <div className="nav__div">
-        <img className="nav__icon" src={Library} alt="library icon" />
+        <img className="nav__icon nav__library" src={Library} alt="library icon" />
         <p className="nav__title">Library</p>
       </div>
 
       <div className="nav__div">
-        <img className="nav__icon" src={Community} alt="community icon" />
+        <img className="nav__icon nav__community" src={Community} alt="community icon" />
         <p className="nav__title">Community</p>
       </div>
 
       <div className="nav__div">
-        <img className="nav__icon" src={More} alt="more icon" />
+        <img className="nav__icon nav__more" src={More} alt="more icon" />
         <p className="nav__title">More</p>
       </div>
 

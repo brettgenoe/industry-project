@@ -2,7 +2,7 @@ import "./Confirmation.scss"
 import Popcorn from "../../assets-temp/icons/Popcporn_Graphic.svg"
 import { Link } from "react-router-dom";
 
-const Confirmation = ({ formData, selectedMovie, usersData, showConfirmation, onClose }) => {
+const Confirmation = ({ formData, selectedMovie, selectedDay, usersData, selectedDate, showConfirmation, onClose }) => {
     // const handleHomeNavgiate = () => {
     //     navigate(`/`);
     // }
@@ -41,13 +41,13 @@ const Confirmation = ({ formData, selectedMovie, usersData, showConfirmation, on
 
                 </p>
                 <div className="confirmation__time-container">
-                    <p>Time: {formData.time}</p>
+                    <p className="confirmation__time-time">{formData.time}</p>
+                    <p className="confirmation__time-movie">Movie Title</p>
                     {/* <p>Movie: {selectedMovie.name}</p> */}
 
                 </div>
-                <p>Date: {formData.selectedDate}</p>
-
-
+                <p className="confirmation__date">November {selectedDate}, 2023
+                </p>
 
                 <button className="confirmation__button"
                     onClick={onClose}>View Watch Bash Schedule</button>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Homepage from './pages/Homepage/Homepage';
+import usersData from "./data/user.json"
 
 function App() {
   return (

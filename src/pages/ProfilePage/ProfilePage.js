@@ -15,7 +15,7 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+}
 
 
 const ProfilePage = () => {
@@ -24,84 +24,84 @@ const ProfilePage = () => {
 
     return (
         <main className="main">
-        <section className="header">
-            <Link to = "/">
-            <div className="header__back">
-                <img className = "header__back-icon" src ={BackArrow} alt= "Back Arrow">  
-                </img>
-            </div>
-            </Link>
-           
-            
-            <div className="header__image">
-                <img className="header__image-icon" src = {Bell} alt = "Notification bell icon"></img>
-                <img className="header__image-icon" src = {Message} alt = "Message"></img>
-                <img className="header__image-icon" src = {Emoji} alt = "Emoji"></img>
+            <section className="header">
+                <Link to="/">
+                    <div className="header__back">
+                        <img className="header__back-icon" src={BackArrow} alt="Back Arrow">
+                        </img>
+                    </div>
+                </Link>
 
-            </div>
-        </section>
 
-        <section>
-            <div className="details">
-                <img className="details-profilephoto"src = {ProfilePhoto} alt ="Profile Photo"></img>
-                <div className="details-user">
-                    <h1 className="details-user-name">Lizzie’s Activity</h1>
+                <div className="header__image">
+                    <img className="header__image-icon" src={Bell} alt="Notification bell icon"></img>
+                    <img className="header__image-icon" src={Message} alt="Message"></img>
+                    <img className="header__image-icon" src={Emoji} alt="Emoji"></img>
+
                 </div>
-            </div>
-        </section>
-
-        <section className="recent">
-           <section className="recent__header">
-                <h1 className="recent__header-title">Recently Watched</h1>
-                <h3 className="recent__header-subtitle">View All</h3>
-           </section>
-
-           <section className="recent__main">
-            {shuffledMovies.slice(0, 4).map((movie,index) => (
-                <div className="recent__main-movie" key={index}>
-                <img className="recent__main-movie-poster" 
-                        src = {movie.Poster}
-                        alt = {movie.Title}></img>
-                <article className="recent__main-movie-details">
-                    <h4 className="recent__main-movie-details-genre">{movie.Genre}</h4>
-                    <h3 className="recent__main-movie-details-title">{movie.Title}</h3>
-                    <p className="recent__main-movie-details-overview">{movie.Plot}</p>
-                </article>
-            </div>
-            ))}
-                
-           </section>
-        </section>
-
-        <section>
-            <section className="friends__header">
-                <h1 className="friends__header-title">Watch with Friends</h1>
-                <h3 className="friends__header-subtitle">View All</h3>
             </section>
-            <section className="friends__main">
-            {data.map((movie,index) => (
-                <div key= {index} className="friends__main-movie">
-                        <img className="friends__main-movie-poster" src = {movie.Poster} alt = "movie-poster"></img>
-                        <div className="friends__main-movie-like">
-                            <img className="friends__main-movie-like-icon" src={Favourite} alt= "Favorite"></img>
-                        </div>
-                   
-                    
-                    <article className="friends__main-movie-details">
-                        
-                        <div>
-                            <h4 className="friends__main-movie-details-genre">{movie.Genre}</h4>
-                            <h3 className="friends__main-movie-details-title">{movie.Title}</h3>
-                        </div>
-                        <p className="friends__main-movie-details-options">...</p>
-                        
-                    </article>
+
+            <section>
+                <div className="details">
+                    <img className="details-profilephoto" src={ProfilePhoto} alt="Profile Photo"></img>
+                    <div className="details-user">
+                        <h1 className="details-user-name">Lizzie’s Activity</h1>
+                    </div>
                 </div>
-            ))}
             </section>
-            
-        </section>
-        {/* <Footer /> */}
+
+            <section className="recent">
+                <section className="recent__header">
+                    <h1 className="recent__header-title">Recently Watched</h1>
+                    <h3 className="recent__header-subtitle">View All</h3>
+                </section>
+
+                <section className="recent__main">
+                    {shuffledMovies.slice(0, 4).map((movie, index) => (
+                        <Link to="/details"><div className="recent__main-movie" key={index}>
+                            <img className="recent__main-movie-poster"
+                                src={movie.Poster}
+                                alt={movie.Title}></img>
+                            <article className="recent__main-movie-details">
+                                <h4 className="recent__main-movie-details-genre">{movie.Genre}</h4>
+                                <h3 className="recent__main-movie-details-title">{movie.Title}</h3>
+                                <p className="recent__main-movie-details-overview">{movie.Plot}</p>
+                            </article>
+                        </div> </Link>
+                    ))}
+
+                </section>
+            </section>
+
+            <section>
+                <section className="friends__header">
+                    <h1 className="friends__header-title">Watch with Friends</h1>
+                    <h3 className="friends__header-subtitle">View All</h3>
+                </section>
+                <section className="friends__main">
+                    {data.map((movie, index) => (
+                        <div key={index} className="friends__main-movie">
+                            <img className="friends__main-movie-poster" src={movie.Poster} alt="movie-poster"></img>
+                            <div className="friends__main-movie-like">
+                                <img className="friends__main-movie-like-icon" src={Favourite} alt="Favorite"></img>
+                            </div>
+
+
+                            <article className="friends__main-movie-details">
+
+                                <div>
+                                    <h4 className="friends__main-movie-details-genre">{movie.Genre}</h4>
+                                    <h3 className="friends__main-movie-details-title">{movie.Title}</h3>
+                                </div>
+                                <p className="friends__main-movie-details-options">...</p>
+
+                            </article>
+                        </div>
+                    ))}
+                </section>
+
+            </section>
+            {/* <Footer /> */}
         </main>
     )
 }

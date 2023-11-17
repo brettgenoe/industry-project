@@ -1,0 +1,188 @@
+@import '../../styles/partials/variables.scss';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-color;
+
+    &__title {
+        color: $font-color;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__button-profile,
+    &__button-settings,
+    &__button-alert,
+    &__button-rewind {
+        border: none;
+        border-radius: 50%;
+        background-color: $alt-color;
+        margin: 1rem;
+        height: 30px;
+        width: 30px;
+    }
+
+    &__friends {
+        display: flex;
+        flex-direction: column;
+        color: $font-color;
+    }
+
+    &__activity {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__activityTitle {
+        font-size: .75rem;
+        margin: 0;
+    }
+
+    &__leftSection,
+    &__rightSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto 0;
+    }
+
+    &__leftSection-background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        width: 100px;
+        height: 40px;
+        margin: 0;
+    }
+
+    &__rightSection-background {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, rgb(139, 33, 17), #d8a08b);
+        box-shadow: 0 0 5px 1px rgba(244, 225, 192, 0.7);
+        border-radius: 25px;
+        width: 92px;
+        padding: 0 1px 0 7px;
+        height: 40px;
+    }
+
+    &__activeUser {
+        margin: 0 .5rem;
+    }
+
+    &__profileImg{
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $font-color;
+        margin: 0 0 0 -8px;
+    }
+
+    &__user-stats {
+        font-size: .75rem;
+        margin: 0;
+        
+    }
+
+    &__mainTitle {
+        margin: 1rem 0 0 0;
+        color: $font-color;
+    }
+
+   &__movieSection {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        width: 95vw;
+        height: 340px; 
+        overflow-y: auto;
+        margin: 0;
+   }
+   &__movie-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 330px;
+    }
+
+   &__moviePosters {
+        position: relative;
+        height: 300px;
+        width: 200px;
+        margin: .25rem;
+        border-radius: 10px;
+   }
+
+   &__genre {
+        position: relative;
+        top: 255px;
+        z-index: 1;
+        font-size: .5rem;
+        color: $font-color;
+   }
+
+   &__buttons {
+        backdrop-filter: blur(2px);
+        position: relative;
+        top: -60px;
+        display: flex;
+        justify-content: center;
+   }
+
+   &__button-save,
+   &__button-share {
+        background-color: transparent;
+        color: $font-color;
+        border: none;
+   }
+
+   &__button-watchNow {
+        background-color: transparent;
+        color: $font-color;
+        border: 3px solid white;
+        border-radius: 5px;
+        padding: .5rem 1rem;
+        &:hover {
+            background-color: $background-color;
+            border: 1px solid $background-color
+        }
+   }
+
+   &__recentlyWatched {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 95vw;
+        height: 360px; 
+        overflow-y: auto;
+        margin: 0;
+    }
+
+   &__popularMovies {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+   }
+
+   &__sectionTitle {
+        font-size: 1rem;
+        color: $font-color;
+   }
+
+   &__button-seeAll {
+        background-color: transparent;
+        border: none;
+        color: $button-color;
+        font-size: .75rem;
+   }
+
+
+
+
+}

@@ -1,4 +1,4 @@
-@use "./variables.module.scss" as *;
+@use "./variables.scss" as *;
 @use "./fonts.scss" as *;
 
 
@@ -14,12 +14,13 @@
     }
 }
 
-@mixin page-header {
-    color: $primary-text;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    font-family: $text-family;
-    font-weight: $text-bold;
+@mixin heading-1 {
+    font-family: "Lato";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    color: $white;
 
     @include tablet {
         font-size: 2rem;
@@ -27,12 +28,12 @@
     }
 }
 
-@mixin subheader {
-    color: $primary-text;
+@mixin heading-2 {
+    color: $white;
     font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-family: $text-family;
-    font-weight: $text-bold;
+    line-height: 28px;
+    font-family: "Lato";
+    font-weight: 600;
 
     @include tablet {
         font-size: 1.5rem;
@@ -40,6 +41,32 @@
     }
 }
 
+@mixin heading-3{
+    color: $white;
+    font-size: 1.125rem;
+    line-height: 24px;
+    font-family: "Lato";
+    font-weight: 600;
+}
+
+@mixin heading-4{
+    color: $white;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+@mixin heading-5{
+    color: $white;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+
+//extra
 @mixin label-links-buttons {
     color: $primary-text;
     font-size: 0.8125rem;

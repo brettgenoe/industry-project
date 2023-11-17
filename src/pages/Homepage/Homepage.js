@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import Comments from "../../components/Comments/Comments"
-import "./Homepage.scss"
-import movie from "../../data/user.json"
-import Schedule from "../../components/Schedule/Schedule"
-
-=======
 import './Homepage.scss';
 import movieData from '../../data/movies.json';
 import userData from '../../data/user.json';
@@ -16,7 +9,6 @@ function shuffleArray(array) {
     }
     return array;
   }
->>>>>>> develop
 
 const Homepage = () => {
     const shuffledMovies = shuffleArray([...movieData]);
@@ -26,10 +18,6 @@ const Homepage = () => {
     return (
 <section className="home">
 
-<<<<<<< HEAD
-        <>
-            < Schedule />
-=======
     <nav className="home__nav">
         <button className="home__button-profile"></button>
         <button className="home__button-settings"></button>
@@ -105,7 +93,6 @@ const Homepage = () => {
     </div>
 
 </section>
->>>>>>> develop
 
     )
 }

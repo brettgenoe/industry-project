@@ -1,5 +1,5 @@
-@use "./variables.module.scss" as *;
-@use "./fonts.scss" as *;
+@use "../partials/variables.scss";
+@use "./fonts.scss";
 
 
 @mixin tablet {
@@ -12,6 +12,10 @@
     @media (min-width: $desktop-breakpoint) {
         @content;
     }
+}
+
+@mixin svg-white {
+    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(134deg) brightness(107%) contrast(98%);
 }
 
 @mixin page-header {

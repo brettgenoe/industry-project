@@ -5,7 +5,11 @@
     border: none;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
+    font-family: sans-serif;
+=======
     font-family: 'Lato', sans-serif;
+>>>>>>> develop
 }
 
 /* Reset CSS */
@@ -132,5 +136,5 @@ table {
 
 a {
     text-decoration: none;
-    color: $primary-white;
+    color: $font-color;
 }

@@ -1,0 +1,34 @@
+@use "../../styles/partials/variables.scss" as *;
+
+.day-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 6rem;
+    min-width: 4rem;
+    background: linear-gradient(to top, #92140c, #ffcf99);
+    margin-right: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    border: none;
+
+
+    &__day {
+        color: $font-color;
+        font-size: 1.35rem;
+    }
+
+    &__date {
+        color: $font-color;
+        font-size: 1.35rem;
+    }
+
+
+
+}
+
+#date-picked {
+    background: $hover-color ;
+}

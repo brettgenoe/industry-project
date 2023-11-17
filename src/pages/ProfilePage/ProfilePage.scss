@@ -118,17 +118,7 @@
         height: 14rem;
       }
 
-      &-like {
-        width: auto;
-
-        &-icon {
-          float: right;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-
+      
       &-details {
         &-genre {
           @include heading-5;
@@ -185,6 +175,7 @@
 
     &-movie {
       padding: 0 0.5rem;
+      position: relative;
     //   opacity: 0.6;
     //   transition: opacity 0.5s ease-in-out;
     //   &:hover {
@@ -193,6 +184,26 @@
       transition: transform 0.5s ease-in-out;
       &:hover {
         transform: scale(1.05);
+      }
+
+      &-like {
+        width: auto;
+        position: absolute;
+        top: 1rem;
+        right:1rem;
+        transition: right 0.3s ease-in-out;
+
+
+        &-icon {
+          float: right;
+          margin-right: 0;
+          transition: margin-right 0.3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+            margin-right: -30px;
+          }
+        }
       }
 
       &-poster {

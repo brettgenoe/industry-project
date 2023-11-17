@@ -11,7 +11,7 @@
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 50%;
-    border: 2px solid $font-color;
+    border: 2px solid $white;
     transition: border-color 0.3s ease;
     margin-right: 0rem;
 }
@@ -37,7 +37,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     flex-direction: column;
     height: 100vh;
     padding: (7.5%);
-    background-color: $background-color;
+    background-color: $black;
 
     &__movie {
         &-details {
@@ -55,7 +55,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     }
 
     &__title {
-        color: $font-color;
+        color: $white;
         font-size: 2rem;
         font-weight: 500;
     }
@@ -63,7 +63,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     &__form {
 
         &--label {
-            color: $font-color;
+            color: $white;
             display: block;
             padding-top: .5rem;
             padding-bottom: .5rem;
@@ -78,12 +78,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
         &--time {
             background-color: transparent;
-            color: $button-color;
+            color: $yellow;
             font-size: 1.5rem;
         }
 
         &--date-title {
-            color: $button-color;
+            color: $yellow;
             font-size: 1.5rem;
             margin-bottom: .5rem;
         }
@@ -103,7 +103,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
             }
 
             &--name {
-                color: $font-color;
+                color: $white;
             }
         }
 
@@ -114,8 +114,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         }
 
         &--button {
-            background-color: $button-color;
-            color: $background-color;
+            background-color: $yellow;
+            color: $black;
             width: 90%;
             height: 4rem;
             font-size: 1.5rem;

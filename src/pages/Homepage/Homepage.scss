@@ -1,98 +1,129 @@
 @import '../../styles/partials/variables.scss';
 
 .home {
+    font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $background-color;
+    background-color: $blue;
 
     &__title {
-        color: $font-color;
+        color: $white;
     }
 
     &__nav {
+        width: 90%;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin: .5rem;
     }
 
-    &__button-profile,
-    &__button-settings,
-    &__button-alert,
-    &__button-rewind {
-        border: none;
+    &__profileImg {
+        border: 3px solid $yellow;
         border-radius: 50%;
-        background-color: $alt-color;
-        margin: 1rem;
-        height: 30px;
-        width: 30px;
+        height: 50px;
+    }
+
+    &__button-notification,
+    &__button-message {
+        fill: FFFFFF;
+        margin: .5rem;
+        &:hover {
+            fill: orange;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
     }
 
     &__friends {
         display: flex;
         flex-direction: column;
-        color: $font-color;
+        color: $white;
+        width: 100%;
     }
 
     &__activity {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center
     }
 
     &__activityTitle {
         font-size: .75rem;
-        margin: 0;
+        margin: 0 0 .5rem .5rem;
     }
 
     &__leftSection,
     &__rightSection {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: auto 0;
+        margin: 0 1rem;
     }
+    
+    &__leftSection {
+        display: flex;
 
+    }
     &__leftSection-background {
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 25px;
-        width: 100px;
+        width: 130px;
         height: 40px;
-        margin: 0;
     }
 
     &__rightSection-background {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(to right, rgb(139, 33, 17), #d8a08b);
+        background: linear-gradient(to right, rgb(213, 129, 50), #d8a08b);
         box-shadow: 0 0 5px 1px rgba(244, 225, 192, 0.7);
         border-radius: 25px;
-        width: 92px;
+        width: 140px;
+        height: 51px;
         padding: 0 1px 0 7px;
-        height: 40px;
     }
 
-    &__activeUser {
-        margin: 0 .5rem;
-    }
-
-    &__profileImg{
-        height: 30px;
+    &__profileImg-left{
+        height: 50px;
         border-radius: 50%;
-        border: 1px solid $font-color;
-        margin: 0 0 0 -8px;
+        border: 2px solid $yellow;
+        margin: .25rem;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    &__user-stats {
-        font-size: .75rem;
-        margin: 0;
-        
+    &__userProfile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+        }
     }
+
+    &__userName {
+        font-size: .5rem;
+    }
+
+    &__profileImg-right {
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid $red;
+        margin: 0 0 0 -8px;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+
 
     &__mainTitle {
         margin: 1rem 0 0 0;
-        color: $font-color;
+        color: $white;
     }
 
    &__movieSection {
@@ -100,7 +131,7 @@
         flex-direction: row;
         align-content: center;
         width: 95vw;
-        height: 340px; 
+        height: 357px; 
         overflow-y: auto;
         margin: 0;
    }
@@ -121,36 +152,70 @@
 
    &__genre {
         position: relative;
-        top: 255px;
+        top: 235px;
         z-index: 1;
-        font-size: .5rem;
-        color: $font-color;
+        font-size: .75rem;
+        color: $white;
    }
 
    &__buttons {
-        backdrop-filter: blur(2px);
-        position: relative;
-        top: -60px;
         display: flex;
         justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        backdrop-filter: blur(4px);
+        position: relative;
+        top: -60px;
+        width: 100%;;
+   }
+
+   &__save,
+   &__share {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
    }
 
    &__button-save,
    &__button-share {
+        width: 30px;
         background-color: transparent;
-        color: $font-color;
+        color: $white;
         border: none;
+   }
+
+   &__watchNow {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        border: 3px solid $yellow;
+        border-radius: 18px;
+        padding: .5rem 0;
+        width: 100px;
+        &:hover {
+            background-color: $yellow;
+            border: 1px solid $yellow;
+        }
+   }
+
+   &__playIcon {
+    fill: FFFFFF;
+    &:hover {
+        fill: orange;
+        cursor: pointer;
+        transform: scale(1.2);
+    }
    }
 
    &__button-watchNow {
         background-color: transparent;
-        color: $font-color;
-        border: 3px solid white;
-        border-radius: 5px;
-        padding: .5rem 1rem;
+        color: $white;
         &:hover {
-            background-color: $background-color;
-            border: 1px solid $background-color
+            cursor: pointer;
         }
    }
 
@@ -172,17 +237,17 @@
 
    &__sectionTitle {
         font-size: 1rem;
-        color: $font-color;
+        color: $white;
    }
 
    &__button-seeAll {
         background-color: transparent;
         border: none;
-        color: $button-color;
+        color: $yellow;
         font-size: .75rem;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
    }
-
-
-
-
 }

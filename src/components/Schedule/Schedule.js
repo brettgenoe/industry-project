@@ -1,5 +1,5 @@
 import "./Schedule.scss"
-import usersData from "../../data/user.json"
+import usersData from "../../data/userData.json"
 import { useState } from "react";
 import plus from "../../assets-temp/icons/icons8-plus-50.png"
 import TimePicker from "../TimePicker/TimePicker";

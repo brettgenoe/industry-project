@@ -43,44 +43,53 @@ const Schedule = ({ selectedMovie }) => {
 
         <section className="schedule">
             <div className="schedule__container">
-                <h1 className="schedule__title"> Let's Watch Together!</h1>
 
-                <form onSubmit={handleSubmit}
+                <h1 className="schedule__title"> Let's Watch Together!</h1>
+                <form
+                    // onSubmit={handleSubmit}
                     className="scheudle__form"
                 >
-                    <label>
-                        Event Name:
+                    <div className="schedule__movie-details--container">
+                        {selectedMovie && (
+                            <>
+                                <img
+                                    src={selectedMovie.imgUrl}
+                                    alt={selectedMovie.name}
+                                    className="schedule__movie-poster"
+                                />
+                                <h2 className="schedule__movie-name">Join the {selectedMovie.name} Gathering</h2>
+                                <p className="schedule__movie-description"> {selectedMovie.description}</p>
+
+
+                            </>
+                        )}
+                    </div>
+                    <div className="schedule__form--container">  <label
+                        className="schedule__form--label">
+                        Pick a Date </label>
                         <input
-                            type="text"
-                            name="eventName"
-                            value={formData.eventName}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <br />
-                    <label>
-                        Date:
-                        <input
+                            className="schedule__form--date"
                             type="date"
                             name="date"
                             value={formData.date}
                             onChange={handleChange}
                         />
-                    </label>
-                    <br />
-                    <label>
-                        Time:
-                        <input
-                            type="time"
-                            name="time"
-                            value={formData.time}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <br />
-                    <label>
-                        Friends:
-                        <ul>
+
+                        <div>
+                            <label className="schedule__form--label">
+                                Pick a Time  </label>
+                            <input
+                                type="time"
+                                name="time"
+                                value={formData.time}
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <br />
+                        <label className="schedule__form--label">
+                            Add Friends </label>
+                        <ul className="schedule__form-friends--container">
                             {usersData.users.map((user) => (
                                 <div
                                     key={user.id}
@@ -95,9 +104,12 @@ const Schedule = ({ selectedMovie }) => {
                                 </div>
                             ))}
                         </ul>
-                    </label>
+
+                    </div>
                     <br />
-                    <button type="submit">Submit</button>
+                    <button
+                        className="schedule__form--button"
+                        type="submit">Invite</button>
                 </form>
             </div>
         </section>
